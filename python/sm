@@ -1,0 +1,86 @@
+int take_and_put(board **b)
+{
+  int mv,result;
+  MOVE m;
+  result=check_board(*b);
+  if(result==1)
+    {
+      printf("Computer Win the game");
+      return 1;
+    }
+  if(result==-1)
+    {
+    printf("Human Win the game");
+    return -1;
+    }
+  if(result==0)
+    {
+      printf("Enter your movement : ");
+      scanf("%d",&mv);
+      if(Isvalid_move(mv)==true)
+	{
+	  m=mapInt2Move(mv);
+	  (*b)->b[m.i][m.j]='X';
+	  system("clear");
+	  print_game();
+	  help_board();
+	  print_grid(b);
+	}
+      else
+	{
+	printf("Invalid choice\n");
+	return 2;
+	}
+    }
+  return 0;
+}
+
+def take_player_Move(board):
+    move = int(input("Enter Your Movement"))
+    if(IsValidChoice(move)==True):
+        if(keepTrack_TakenMove(list_of_done_move,move)==True):
+            list_of_done_move.append(move)
+            print(list_of_done_move)
+            x,y= mapInt2Pos(move)
+            return x,y
+        else:
+             print("Re-enter Your Movement between 1 to 9 Which has not yet been taken : ")
+             #take_player_Move(board)
+             move = int(input("Enter Your Movement"))
+             if(keepTrack_TakenMove(list_of_done_move,move)==True):
+                list_of_done_move.append(move)
+                print(list_of_done_move)
+                x,y= mapInt2Pos(move)
+                return x,y
+    else:
+        print("Re-enter Your Movement between 1 to 9 : ")
+        move = int(input("Enter Your Movement"))
+        if(keepTrack_TakenMove(list_of_done_move,move)==True):
+                list_of_done_move.append(move)
+                print(list_of_done_move)
+                x,y= mapInt2Pos(move)
+                return x,y
+
+def take_player_move(list_of_done_move):
+    move = int(input("Enter your move : "))
+    if(IsValidChoice(move)==True):
+        
+        print(list_of_done_move)
+        x,y = mapInt2Pos(move)
+        return x,y
+    else:
+        print("Please Enter Valid1 Movement which has not been taken and in within the range of 1 to 9")
+        take_player_move(list_of_done_move)
+ if(==True):
+        if(keepTrack_TakenMove(list_of_done_move,num)==False):
+            list_of_done_move.append(num)
+            x,y = mapInt2Pos(num)
+            return x,y
+    else:
+        print("Please enter valid Movement")
+        while(IsValidChoice(num)!=True and keepTrack_TakenMove(list_of_done_move,num)!=Falsexo):
+            num = int(input("Enter Your Move"))
+
+        x,y = mapInt2Pos(num)
+        return x,y
+start_game(board,h_board,list_of_done_move)
