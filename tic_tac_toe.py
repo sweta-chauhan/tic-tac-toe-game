@@ -1,4 +1,4 @@
-#Still Already Taken movement are taken as input that i have to solve
+#Working Properly
 import ai
 from os import system
 
